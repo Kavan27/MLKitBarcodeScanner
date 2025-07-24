@@ -4,6 +4,7 @@ using Xamarin.Google.MLKit.Vision.CodeScanner;
 using Java.Lang;
 using Task = Android.Gms.Tasks.Task;
 using Android.Runtime;
+using Android.Media;
 
 namespace MLKitBarcodeScannerApp.Platforms.Android
 {
@@ -54,6 +55,15 @@ namespace MLKitBarcodeScannerApp.Platforms.Android
             {
                 if (task.IsSuccessful)
                 {
+                    try
+                    {
+                        using var tone = new ToneGenerator(Stream.Notification, 100);
+                        tone.StartTone(Tone.PropBeep);
+                    }
+                    catch
+                    {
+                        // ignore tone playback failures
+                    }
                     var barcode = task.Result.JavaCast<Barcode>();
                     _tcs.TrySetResult(barcode);
                 }
