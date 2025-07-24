@@ -4,9 +4,9 @@ This repository contains a sample .NET MAUI application that focuses on Android 
 
 ## Features
 
-- **Immediate camera launch** – When the app starts, it opens the camera so you can begin scanning right away.
+- **Button to launch camera launch** – When the app starts, there is a single "Scan Barcode" button clicking it opens the camera so you can begin scanning right away.
 - **ML Kit barcode detection** – Uses `Xamarin.Google.MLKit.Vision.CodeScanner` to detect barcodes and QR codes.
-- **Success dialog** – When a code is detected, the app shows a success message containing the scanned string/ID.
+- **Success dialog** – When a code is detected the app beeps, then the app shows a success message containing the scanned string/ID.
 - **No result handling** – If nothing is detected the camera simply stays open with no additional UI.
 
 ## Folder Structure
