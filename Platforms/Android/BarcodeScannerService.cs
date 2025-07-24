@@ -31,9 +31,9 @@ namespace MLKitBarcodeScannerApp.Platforms.Android
             }
         }
 
-        private Task<Barcode> ScanBarcodeAsync(IGmsBarcodeScanner scanner)
+        private Task<Barcode?> ScanBarcodeAsync(IGmsBarcodeScanner scanner)
         {
-            var tcs = new TaskCompletionSource<Barcode>();
+            var tcs = new TaskCompletionSource<Barcode?>();
 
             var listener = new BarcodeScanListener(tcs);
             scanner.StartScan().AddOnCompleteListener(listener);
@@ -43,9 +43,9 @@ namespace MLKitBarcodeScannerApp.Platforms.Android
 
         private class BarcodeScanListener : Java.Lang.Object, IOnCompleteListener
         {
-            private readonly TaskCompletionSource<Barcode> _tcs;
+            private readonly TaskCompletionSource<Barcode?> _tcs;
 
-            public BarcodeScanListener(TaskCompletionSource<Barcode> tcs)
+            public BarcodeScanListener(TaskCompletionSource<Barcode?> tcs)
             {
                 _tcs = tcs;
             }
@@ -56,6 +56,10 @@ namespace MLKitBarcodeScannerApp.Platforms.Android
                 {
                     var barcode = task.Result.JavaCast<Barcode>();
                     _tcs.TrySetResult(barcode);
+                }
+                else if (task.IsCanceled)
+                {
+                    _tcs.TrySetResult(null);
                 }
                 else
                 {
