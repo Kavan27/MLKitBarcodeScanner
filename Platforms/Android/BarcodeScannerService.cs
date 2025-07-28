@@ -4,6 +4,7 @@ using Xamarin.Google.MLKit.Vision.CodeScanner;
 using Java.Lang;
 using Task = Android.Gms.Tasks.Task;
 using Android.Runtime;
+using Microsoft.Maui.ApplicationModel;
 
 namespace MLKitBarcodeScannerApp.Platforms.Android
 {

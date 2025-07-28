@@ -4,6 +4,7 @@ using Android.Gms.Tasks;
 using Android.Runtime;
 using Java.Lang;
 using Task = Android.Gms.Tasks.Task;
+using Microsoft.Maui.ApplicationModel;
 
 namespace MLKitBarcodeScannerApp.Platforms.Android
 {
