@@ -70,6 +70,7 @@
           <PackageReference Include="Xamarin.GooglePlayServices.Code.Scanner">
             <Version>116.1.0.4</Version>
           </PackageReference>
+          <PackageReference Include="Xamarin.AndroidX.Camera.Core" Version="1.2.0.8" />
           <PackageReference Include="Xamarin.AndroidX.Camera.Camera2" Version="1.2.0.8" />
           <PackageReference Include="Xamarin.AndroidX.Camera.Lifecycle" Version="1.2.0.8" />
           <PackageReference Include="Xamarin.AndroidX.Camera.View" Version="1.2.0.8" />
@@ -77,3 +78,4 @@
         </ItemGroup>
 
 </Project>
+

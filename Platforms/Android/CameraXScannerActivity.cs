@@ -7,6 +7,8 @@ using AndroidX.Core.Content;
 using Google.MLKit.Vision.Barcode;
 using Google.MLKit.Vision.Barcode.Common;
 using Google.MLKit.Vision.Common;
+using Android.Runtime;
+using Java.Lang;
 using Microsoft.Maui.ApplicationModel;
 
 namespace MLKitBarcodeScannerApp.Platforms.Android;
@@ -15,7 +17,7 @@ namespace MLKitBarcodeScannerApp.Platforms.Android;
 public class CameraXScannerActivity : AndroidX.AppCompat.App.AppCompatActivity
 {
     PreviewView? previewView;
-    IBarcodeScanner? barcodeScanner;
+    Google.MLKit.Vision.Barcode.IBarcodeScanner? barcodeScanner;
     ProcessCameraProvider? cameraProvider;
     AndroidX.Camera.Core.Camera? camera;
     protected override void OnCreate(Bundle? savedInstanceState)
@@ -65,9 +67,9 @@ public class CameraXScannerActivity : AndroidX.AppCompat.App.AppCompatActivity
     class BarcodeAnalyzer : Java.Lang.Object, ImageAnalysis.IAnalyzer
     {
         readonly CameraXScannerActivity activity;
-        readonly IBarcodeScanner scanner;
+        readonly Google.MLKit.Vision.Barcode.IBarcodeScanner scanner;
 
-        public BarcodeAnalyzer(CameraXScannerActivity activity, IBarcodeScanner scanner)
+        public BarcodeAnalyzer(CameraXScannerActivity activity, Google.MLKit.Vision.Barcode.IBarcodeScanner scanner)
         {
             this.activity = activity;
             this.scanner = scanner;

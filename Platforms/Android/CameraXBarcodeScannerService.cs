@@ -16,3 +16,4 @@ public class CameraXBarcodeScannerService : IBarcodeScanner
         return ResultSource.Task;
     }
 }
+
