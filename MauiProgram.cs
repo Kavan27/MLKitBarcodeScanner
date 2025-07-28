@@ -20,7 +20,7 @@ namespace MLKitBarcodeScannerApp
 
             // Register services
 #if ANDROID
-    builder.Services.AddSingleton<IBarcodeScanner, Platforms.Android.BarcodeScannerService>();
+    builder.Services.AddSingleton<IBarcodeScanner, Platforms.Android.CameraXBarcodeScannerService>();
 #endif
 
             // Register pages

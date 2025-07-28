@@ -63,13 +63,17 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
 	</ItemGroup>
 
-	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
-	  <PackageReference Include="Xamarin.AndroidX.Collection.Ktx">
-	    <Version>1.4.0.1</Version>
-	  </PackageReference>
-	  <PackageReference Include="Xamarin.GooglePlayServices.Code.Scanner">
-	    <Version>116.1.0.4</Version>
-	  </PackageReference>
-	</ItemGroup>
+        <ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
+          <PackageReference Include="Xamarin.AndroidX.Collection.Ktx">
+            <Version>1.4.0.1</Version>
+          </PackageReference>
+          <PackageReference Include="Xamarin.GooglePlayServices.Code.Scanner">
+            <Version>116.1.0.4</Version>
+          </PackageReference>
+          <PackageReference Include="Xamarin.AndroidX.Camera.Camera2" Version="1.2.0.8" />
+          <PackageReference Include="Xamarin.AndroidX.Camera.Lifecycle" Version="1.2.0.8" />
+          <PackageReference Include="Xamarin.AndroidX.Camera.View" Version="1.2.0.8" />
+          <PackageReference Include="Xamarin.Google.MLKit.BarcodeScanning" Version="17.2.0" />
+        </ItemGroup>
 
 </Project>
